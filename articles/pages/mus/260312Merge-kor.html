@@ -134,10 +134,36 @@
                 다만, 구는 그 자체로 품사 자질이 없기 때문에 {α, βP}는 핵 α의 품사 자질로, {αP, βP}는 두 구가 서로 공유하는 그 자질로 일치 및 표찰되는 것입니다.
             </p>
             <h2 id="turn"> 轉: 그러면, 국면에 대한 이런 해석은 어떤가요? </h2>
-            저는 이 글을 읽자 마자 POP 모형은 국면 단위 도출<sub>derivation by phase</sub>에 대한 새로운 이해를 줄 것 같다는 생각을 했습니다. 
-            저의 논의는 일단 이렇게 시작합니다. (Merge의 정의에 대하여는 <a href="#Def-Merge">Definition 1. (Merge)</a>을 참조하세요.)
-            <div class="definition" id="Def-Label" > (Label) {SO<sub>0</sub>, SO<sub>1</sub>}의 표찰은 SO<sub>0</sub>와 SO<sub>1</sub>가 일치되고 있는 자질이다.</div>
-            <div class="axiom" if="Ax-Label"> (Labelness of Lexical Array) Lexical Array의 원소들은 </div>
+            <p>
+                저는 이 글을 읽자 마자 POP 모형은 '국면 단위 도출<sub>derivation by phase</sub>'에 대한 새로운 이해를 줄 것 같다는 생각을 했습니다. 
+                저의 논의는 일단 이렇게 시작합니다. (Merge의 정의에 대하여는 <a href="#Def-Merge">Definition 1. (Merge)</a>을 참조하세요.)
+                <div class="definition" id="Def-Label" > (Label) {SO<sub>0</sub>, SO<sub>1</sub>}의 표찰은 SO<sub>0</sub>와 SO<sub>1</sub>가 일치되고 있는 자질이다.</div>
+                이러한 정의에 바탕하여 다음과 같은 공리들을 가집시다:
+                <ol>
+                    <li>통사부에서 표찰을 결정할 수 있는 자질은 품사 자질 뿐이다.</li>
+                    <li>표찰이 부여되지 않는 통사적 대상은 통사부 연산에서 참조될 수 없다. </li>
+                    <li>D, Voice, C는 국면핵이다.</li>
+                    <li>국면은 완성되지 마자 문자화<sub>Spell-Out</sub>된다.</li>
+                </ol>
+                이 내용들에 있어서 저는 큰 틀에서는 Chomsky가 제시한 표준적인 모형들과 동궤이나, 구체적인 구현에 있어서 차이가 있습니다. 
+                우선 저는 품사 자질만이 표찰을 부여할 수 있는 유일한 자질들이라고 가정하겠습니다. 성·수의 정보나 의문문 여부 등은 통사부보다는 의미부의 영역으로 느껴지기 때문입니다.
+                또, 표찰이 부여되지 않는 통사적 대상은 통사부 연산에서 참조될 수 없다고 보겠습니다. 이것은 표찰이 문자화 이후 접면부에서 점검된다고 본 Chomsky와 정반대의 관점입니다. 하지만, 표찰이 통사적 자질에 의하여 결정되는 것이라면 통사부 연산 또한 이 자질에 대하여 민감한 것이 더욱 자연스럽겠습니다.
+                마지막으로, 대부분의 논의는 국면 단위 도출의 과정을 "국면은 새로운 국면핵과 병합할 때 자신의 보충어를 문자화 시킨다"라고 이해합니다. 이는 현상을 설명하기 위하여 기술적으로 고안된 관점입니다. 저는 이하에서 국면핵이 완성되지마자 문자화되더라도 이전에 관찰된 경험적 일반화를 충족시킬 수 있음을 보일 것입니다.
+            </p>
+            <div class="lemma" id="Thm-ULSO"> 국면은 표찰이 없더라도 도출될 수 있다. </div> 
+            <div class="proof">
+                {DP, CP}는 표찰될 수 없으나 도출될 수 있다: <i>e.g.</i> [[<sub>DP</sub> Which book] [<sub>TP</sub> [<sub>DP</sub> you] [<sub>TP</sub> do [read]]]]
+            </div>
+            <p>
+                이로 부터 따라나오는 따름정리는 다음과 같습니다다:
+                <ul>
+                    <li> {지정어구, 국면구}에 대한 (음성형식, 의미형식)은 다음 문법 연산에서 참조될 수 있다. </li>
+                    <li> {지정어구, 국면구}는 이후의 통사적 도출에서 재도입될 때 하나의 통사 대상으로 도입되지 않는다. </li>
+                </ul>
+                이미 도출된 대상이 이후의 문법 연산에서 일종의 합성어처럼 도입된다는 사실은 잘 알려져 있습니다. (<a href="#Uriagereka1999">Uriagereka 1999</a>) 
+                이것은 도출된 대상의 (음성형식, 의미형식)이 일종의 단기 기억에 저장됨을 암시합니다. 그렇다면, {지정어구, 국면구}가 
+            </p>
+            <div class="theorem" id="Thm-MSO"> 비국면핵의 지정어 위치에는 복합구가 올 수 없다. (<a href="#Uriagereka1999">Uriagereka 1999</a>) </div>
             <h2 id="conc"> 結: 7월의 발표를 기대 해주세요. </h2>
             <p>
                 기억하실련지는 모르겠으나, 윗 절(<a href="#intr">1. 起: 어쩌다 읽게 됐냐면요...</a>)에서 쓴 바와 같이 저는 7월의 국어사학회 학술대회에서 개인 발표를 하게 된 예정이에요.
@@ -157,6 +183,7 @@
                 <li id="Chomsky2013"> Chomsky, N. (2013). Problems of projection. <i>Lingua</i>, 130, 3-49. doi: <a href="doi.org/10.1016/j.lingua.2012.12.003">10.1016/j.lingua.2012.12.003</a> </li>
                 <li id="HarleyNoyer1999"> Harley, H. & R. Noyer (1999). State-of-the-Article: Distributed Morphology. <i>Glot International</i>, 4(4), 3-9.</li>
                 <li id="Marcollietal2025"> Marcolli, M., N. Chomsky & R. Berwick (2025). <i>Mathematical Structures of Syntactic Merge: an Algebraic Model for Generative Linguistics.</i> The MIT Press. ISBN: <a href="https://mitpress.mit.edu/9780262552523/mathematical-structure-of-syntactic-merge/">9780262552523</a></li>
+                <li id="Uriagereka1999"> Uriagereka, J. (1999). Multiple Spell-Out. In S. Epstein & N. Hornstein (ed.) <i>Working minimalism</i>, 251-282. MIT Press.</li>
             </ul>
         </main>
         <footer>
